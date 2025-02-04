@@ -82,7 +82,40 @@
         </a>
       </div>
 
-
+      <div class="container-fluid mt-5">
+        <h2>Daftar Business Owner dengan Invoice</h2>
+        <table class="table table-bordered">
+          <thead>
+            <tr>
+              <th>Nama</th>
+              <th>Invoice</th>
+            </tr>
+          </thead>
+          <tbody>
+            <t t-foreach="partners" t-as="partner">
+              <tr>
+                <td>
+                  <t t-esc="partner.name"/>
+                </td>
+                <td>
+                  <ul>
+                    <t t-foreach="partner.invoice_ids" t-as="invoice">
+                      <li>
+                        <t t-esc="invoice.name"/>
+ - 
+                        <t t-esc="invoice.amount_total"/>
+ 
+                                (                        <t t-esc="invoice.state"/>
+)
+                      </li>
+                    </t>
+                  </ul>
+                </td>
+              </tr>
+            </t>
+          </tbody>
+        </table>
+      </div>
 
 
 
