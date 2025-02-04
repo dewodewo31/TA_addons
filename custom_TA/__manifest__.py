@@ -16,6 +16,8 @@
         'views/car/navbar_car.xml', 
         'views/car/body_car.xml', 
         'views/car/user_pick.xml',
+        'views/car/business_owner.xml',
+        'views/car/car_owner.xml',
 
 
         'views/sale_order.xml',

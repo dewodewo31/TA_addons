@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
-  <template id="role_template" name="Pick Role Page">
+  <template id="car_template" name="Pick Role Page">
     <t t-call="website.layout">
       <t t-call="custom_TA.assets_css"/>
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
@@ -14,13 +14,6 @@
       <!-- Font Awesome -->
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
       <style>
-        .custom-button {
-            min-height: 120px;
-            width: 30%;
-            height: 100%;
-            font-weight: bold;
-            font-size: 29px;
-        }
         /* Custom CSS untuk lingkaran profil */
         .profile-circle {
           width: 40px;
@@ -83,29 +76,13 @@
       </nav>
 
       <div class="col-12 p-5">
-        <a href="/car_page" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+        <a href="/role_page" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
           <i class="fa fa-arrow-left" style="font-size: 20px;"></i>
           <span style="font-size: 16px; font-family: Arial, sans-serif;">Kembali</span>
         </a>
       </div>
 
 
-      <div class="container-fluid d-flex justify-content-center align-items-center" style="padding-top: 50px;padding-bottom: 150px;">
-        <div class="col-12 d-flex flex-column align-items-center">
-          <h1 style="font-weight: bold">Choose Your Role:</h1>
-          <div class="col-10 d-flex flex-column align-items-center mt-3">
-            <!-- Tombol Car Owner -->
-            <button class="btn btn-danger btn-lg mb-3 custom-button" onclick="window.location.href='/car_owner'">
-                Car Owner
-            </button>
-            <span>or</span>
-            <!-- Tombol Business Owner -->
-            <button class="btn btn-danger btn-lg mt-3 custom-button" onclick="window.location.href='/business_owner'">
-                Business Owner
-            </button>
-          </div>
-        </div>
-      </div>
 
 
 
@@ -124,8 +101,8 @@
   </template>
 
   <record id="action_pick_page" model="ir.actions.act_url">
-    <field name="name">Pick Role Page</field>
-    <field name="url">/role_page</field>
+    <field name="name">Car Owner Page</field>
+    <field name="url">/car_owner</field>
     <field name="target">self</field>
   </record>
 
