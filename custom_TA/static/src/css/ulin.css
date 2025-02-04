@@ -1,0 +1,545 @@
+/* ULIN SECTIONS */
+.padding-height {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+/* navbar */
+.navbar-ulin {
+  background-color: #725229;
+}
+.navbar-ulin .navbar-brand,
+.navbar-ulin .nav-link,
+.navbar-ulin .form-control {
+  color: white;
+}
+.navbar-nav .nav-link {
+  font-size: large;
+  font-weight: bold;
+}
+.navbar-ulin .navbar-brand:hover {
+  opacity: 0.8; /* Contoh efek hover untuk logo */
+}
+.navbar-ulin .nav-link:hover {
+  border-bottom: 3px solid #bdf638; /* Ubah nilai 3px untuk ketebalan yang diinginkan */
+  padding-bottom: 2px; /* Sesuaikan jarak antara teks dan garis */
+}
+.navbar-ulin .form-control {
+  background-color: #d1b289;
+  border: none;
+}
+.navbar-ulin .form-control::placeholder {
+  color: #725229;
+}
+.icon-circle {
+  display: inline-flex !important; /* Flex untuk memastikan konten berada di tengah */
+  align-items: center !important; /* Vertikal tengah */
+  justify-content: center !important; /* Horizontal tengah */
+  width: 50px !important; /* Diameter lingkaran */
+  height: 50px !important; /* Diameter lingkaran */
+  border: 2px solid #bdf638 !important; /* Warna border */
+  border-radius: 50% !important; /* Membuat elemen menjadi lingkaran */
+  background-color: transparent !important; /* Tidak ada warna latar */
+  color: white !important; /* Warna ikon */
+  font-size: 24px !important; /* Ukuran ikon (otomatis menyesuaikan lingkaran) */
+  text-align: center !important; /* Ikon tetap terpusat */
+}
+
+.icon-circle:hover {
+  background-color: #bdf638 !important; /* Warna latar saat hover */
+  color: #725229 !important; /* Warna ikon saat hover */
+}
+
+/* Pastikan ikon mengisi lingkaran */
+.icon-circle i {
+  width: 100% !important; /* Ikon memenuhi lingkaran */
+  height: 100% !important; /* Ikon memenuhi lingkaran */
+  display: flex !important; /* Ikon fleksibel */
+  align-items: center !important; /* Vertikal tengah */
+  justify-content: center !important; /* Horizontal tengah */
+  font-size: 70% !important; /* Sesuaikan dengan ukuran lingkaran */
+}
+.input-group-text {
+  background-color: #bdf638 !important; /* Warna latar belakang ikon */
+  color: white; /* Warna ikon */
+  border: none; /* Hilangkan border */
+}
+
+.form-control {
+  border: 1px solid #725229; /* Warna border search bar */
+}
+
+.form-control:focus {
+  box-shadow: none; /* Hilangkan efek shadow saat focus */
+  border-color: #bdf638; /* Warna border saat focus */
+}
+/* JUMBOTRON */
+.jumbotron-auto {
+  background-image: url("/custom_TA/static/src/img/home/ulin-card.webp"); /* Path gambar */
+  background-size: cover; /* Gambar memenuhi area */
+  background-position: center; /* Gambar di tengah */
+  background-repeat: no-repeat; /* Jangan ulangi gambar */
+  color: white; /* Warna teks */
+  padding: 100px 15px; /* Padding besar untuk ruang konten */
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7); /* Bayangan teks untuk kontras */
+  height: 600px;
+}
+
+.jumbotron-auto .display-4 {
+  font-weight: bold;
+  text-transform: uppercase; /* Huruf kapital */
+}
+.container-ulin {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Menempatkan konten di bagian atas */
+  align-items: flex-start; /* Menempatkan konten di sisi kiri */
+  padding: 20px; /* Sesuaikan padding sesuai keinginan */
+}
+.display-4,
+.my-4 {
+  text-align: left; /* Pastikan teks berada di kiri */
+  margin-left: 0; /* Hilangkan margin otomatis */
+}
+.btn-shop-now {
+  background-color: #bdf638 !important; /* Warna tombol */
+  color: #725229; /* Warna teks tombol */
+  padding: 10px 20px;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase; /* Huruf kapital */
+  border: none; /* Hilangkan border */
+  border-radius: 0 !important; /* Rounded tombol */
+  transition: background-color 0.3s ease;
+  padding: 15px 25px !important;
+}
+
+.btn-shop-now:hover {
+  background-color: #a3d72c; /* Warna hover */
+  color: white; /* Teks saat hover */
+}
+/* partner logo */
+.partner-logo {
+  height: 300px;
+  background-color: #ad8350; /* Warna background */
+  display: flex; /* Flexbox untuk menyusun elemen */
+  justify-content: center; /* Elemen rata tengah secara horizontal */
+  align-items: center; /* Elemen rata tengah secara vertikal */
+  flex-wrap: wrap; /* Elemen akan pindah baris jika ruang tidak cukup */
+  gap: 20px; /* Jarak antar logo */
+  padding: 10px; /* Padding untuk memberi ruang dalam container */
+}
+
+.partner-logo img {
+  width: auto; /* Lebar menyesuaikan */
+  height: auto; /* Tinggi menyesuaikan */
+  max-height: 120px; /* Tinggi maksimal */
+  min-width: 100px; /* Lebar minimal */
+  object-fit: contain; /* Gambar tidak terdistorsi */
+  transition: transform 0.3s ease; /* Animasi hover */
+}
+
+.partner-logo img:hover {
+  transform: scale(1.2); /* Perbesar gambar saat di-hover */
+}
+/* card shop collections */
+.container-card {
+  gap: 20px;
+  padding: 40px 0;
+}
+
+/* Card styling */
+.card-shop {
+  width: 300px;
+  height: 400px;
+  border: 5px solid #bdf638;
+  border-radius: 15px;
+  overflow: hidden;
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+  background-color: #fff;
+}
+
+.card-shop:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.5);
+  border-color: #85d904;
+}
+
+.card-shop-img-top {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Overlay styling */
+.card-shop-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.card-shop:hover .card-shop-overlay {
+  opacity: 1;
+}
+
+.card-shop-overlay h3 {
+  margin: 0 0 10px 0;
+}
+
+.card-shop-overlay p {
+  margin-bottom: 15px;
+}
+
+.card-shop-overlay button {
+  background: white;
+  color: black;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.card-shop-overlay button:hover {
+  background: #bdf638;
+  color: #000;
+}
+/* psc */
+.con-psc {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.spchead h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.spchead p {
+  font-size: 1rem;
+  line-height: 1.5; /* Kerapatan teks lebih nyaman */
+  max-width: 1000px; /* Batasi lebar teks agar mudah dibaca */
+}
+.btn-spc {
+  background-color: #bdf638 !important; /* Warna tombol */
+  color: #000 !important; /* Warna teks tombol */
+  padding: 10px 20px;
+  font-size: 25px;
+  font-weight: bold !important;
+  text-transform: uppercase; /* Huruf kapital */
+  border: none; /* Hilangkan border */
+  border-radius: 0 !important; /* Rounded tombol */
+  transition: background-color 0.3s ease;
+  padding: 15px 75px !important;
+}
+.card-spc {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  width: 400px;
+  height: 300px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Animasi zoom saat hover */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.2); /* Zoom-in gambar saat hover */
+}
+
+.card .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+.card:hover .overlay {
+  opacity: 1; /* Menampilkan overlay saat hover */
+}
+
+/* slider banner */
+.slider-socmed {
+  height: 500px;
+  display: flex;
+  align-items: center;
+  background-color: #725229;
+  border: 2px solid #fff;
+}
+.bshead h1 {
+  font-weight: bold;
+  font-size: 2.5rem;
+  color: #fff;
+}
+.bshead p {
+  color: #fff;
+}
+/* reason ulin */
+.con-reason {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+}
+.avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ddd;
+}
+.avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+/* catergory */
+.card-category {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.card card-category {
+  position: relative;
+  width: 300px;
+  height: 400px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transform: scale(1);
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.1); /* Animasi zoom saat hover */
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.2); /* Zoom-in gambar saat hover */
+}
+/* FAQ */
+.-faq-accordion {
+  margin: 0;
+}
+.-faq-accordion-item {
+  border: 1px solid #fff;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+.-faq-accordion-header {
+  background: #725229;
+  padding: 10px;
+  cursor: pointer;
+  font-size: 35px;
+  font-weight: bold;
+  height: 150px !important;
+  display: flex;
+  align-items: center;
+  color: #fff;
+}
+.-faq-accordion-content {
+  display: none;
+  padding: 30px;
+  height: 100%;
+  border-top: 1px solid #ddd;
+  background-color: #ad8350;
+}
+.-faq-accordion-content.active {
+  display: block;
+}
+.accordion-icon {
+  font-size: 40px;
+  font-weight: bold;
+  margin-right: 15px; /* Memberikan jarak antara tanda dan teks */
+}
+
+.slider-socmed {
+  height: 60vh;
+  padding: 20px 0;
+}
+
+.banner-slider-socmed {
+  background-color: #f9f9f9;
+  padding: 30px;
+  min-height: 150px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+}
+
+.bshead-socmed h1 {
+  font-weight: bold;
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.bshead-socmed p {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+  color: #666;
+}
+
+.btn-spc-socmed {
+  background-color: #bdf638;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-spc-socmed:hover {
+  background-color: #bdf638;
+}
+
+.slider-container-socmed {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.swiper-socmed {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-wrapper-socmed {
+  display: flex;
+}
+
+.swiper-slide-socmed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-socmed {
+  width: 90%;
+  height: 90%;
+  margin: 0 auto;
+  border: none;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.card-socmed:hover {
+  transform: scale(1.05);
+}
+
+.card-socmed img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+}
+
+.card-socmed-body {
+  padding: 20px;
+  text-align: center;
+}
+
+.card-title-socmed {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #333;
+}
+
+.card-text-socmed {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 1rem;
+}
+
+.btn-socmed {
+  background-color: #bdf638;
+  color: #000;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.btn-socmed:hover {
+  background-color: #bdf638;
+}
+
+.swiper-button-next-socmed,
+.swiper-button-prev-socmed {
+  color: #ff6f61;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff6f61;
+}
+
+@media (max-width: 768px) {
+  .slider-socmed {
+    height: auto;
+  }
+
+  .banner-slider-socmed {
+    padding: 20px;
+    text-align: center;
+  }
+
+  .bshead-socmed h1 {
+    font-size: 2rem;
+  }
+}

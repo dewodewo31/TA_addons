@@ -1,0 +1,574 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+  <template id="ulin_template" name="ULIN Page">
+    <t t-call="website.layout">
+      <t t-call="custom_TA.assets_css"/>
+      <!-- Bootstrap 4 CSS -->
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"/>
+      <!-- Swiper CSS -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
+      <link rel="stylesheet" type="text/css" href="/custom_TA/static/src/css/ulin.css"/>
+      <!-- Bootstrap CSS -->
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"/>
+      <!-- Owl Carousel CSS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"/>
+      <!-- Font Awesome -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"/>
+      <style>
+        .testimonial-card {
+            max-width: 700px !important;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: row;
+        }
+        .testimonial-image {
+            width: 33.33%;
+            border-top-left-radius: 15px;
+            border-bottom-left-radius: 15px;
+        }
+        .testimonial-content {
+            width: 66.67%;
+            padding: 1rem;
+        }
+        .testimonial-rating {
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-title {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .testimonial-text {
+            margin-bottom: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .testimonial-subtext {
+            font-size: 0.875rem;
+            color: #888;
+        }
+        .owl-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50% !important;
+            background: #fff !important;
+            border: 2px solid #000 !important;
+            color: #000 !important;
+            font-size: 20px !important;
+            transition: all 0.3s ease;
+        }
+        .owl-nav button:hover {
+            background: #000 !important;
+            color: #fff !important;
+        }
+        .owl-prev {
+            left: -60px;
+        }
+        .owl-next {
+            right: -60px;
+        }
+        .owl-dots {
+            margin-top: 30px !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .owl-dots button.owl-dot {
+            background-color: transparent;
+            width: 80px; /* Lebar garis */
+            height: 3px; /* Tinggi garis */
+            margin: 0 5px; /* Jarak antar garis */
+            border: none;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .owl-dots button.owl-dot.active {
+            background: #000 !important;
+            transform: scaleX(1.5); /* Memperpanjang garis saat aktif */
+        }
+        .owl-theme .owl-dots .owl-dot span {
+            width: 10px;
+            height: 10px;
+            margin: 5px 7px;
+            background: #fff;
+            display: block;
+            -webkit-backface-visibility: visible;
+            transition: opacity .2s ease;
+            border-radius: 30px;
+        }
+        .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+            background: #fff
+        }
+        .owl-stage {
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+        .owl-item {
+            
+            opacity: 0.5;
+            transform: scale(0.85);
+            transition: all 0.3s ease;
+        }
+        .owl-item.active {
+            
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+        .owl-item.center {
+            
+            opacity: 1;
+            transform: scale(1);
+        }
+      </style>
+      <!-- navbar -->
+      <nav class="navbar-ulin navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <!-- Logo Brand -->
+          <a class="navbar-brand" href="#">
+            <img src="/custom_TA/static/src/img/ulin/logo-ulin.png" alt="ULIN Logo" style="height: 40px;"/>
+          </a>
+
+          <!-- Toggle Button for Mobile -->
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarUlinNav" aria-controls="navbarUlinNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <!-- Navbar Content -->
+          <div class="collapse navbar-collapse" id="navbarUlinNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">ABOUT</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">CATEGORIES</a>
+              </li>
+            </ul>
+
+            <!-- Search Bar -->
+            <form class="d-flex me-3" role="search">
+              <div class="input-group">
+                <span class="input-group-text" id="search-icon">
+                  <i class="bi bi-search"></i>
+                </span>
+                <input class="form-control" type="search" placeholder="Search" aria-label="Search" aria-describedby="search-icon" />
+              </div>
+            </form>
+
+            <!-- Icons -->
+            <div class="d-flex gap-2">
+              <a href="#" class="nav-link icon-circle">
+                <i class="bi bi-cart3"></i>
+              </a>
+              <a href="#" class="nav-link icon-circle">
+                <i class="bi bi-person-circle"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <!-- end navbar -->
+      <!-- JUMBOTRON -->
+      <div class="jumbotron-auto text-center py-5">
+        <div class="container container-ulin">
+          <h1 class="display-4">AUTO GARAGE</h1>
+          <h4 class="my-4">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse efficitur, orci nec lacinia ullamcorper, ligula eros hendrerit purus, sed interdum justo lorem non sapien.
+          </h4>
+          <a href="#" class="btn btn-shop-now">SHOP NOW</a>
+        </div>
+      </div>
+
+      <!-- END JUMBOTRON -->
+      <!-- partner logo -->
+      <div class="container-fluid col-12 partner-logo d-flex justify-content-center align-items-center flex-wrap">
+        <img t-att-src="'/custom_TA/static/src/img/company/Client-01.svg'" alt="Logo 1" />
+        <img t-att-src="'/custom_TA/static/src/img/company/Client-02.svg'" alt="Logo 2" />
+        <img t-att-src="'/custom_TA/static/src/img/company/Client-03.svg'" alt="Logo 3" />
+        <img t-att-src="'/custom_TA/static/src/img/company/Client-04.svg'" alt="Logo 4" />
+        <img t-att-src="'/custom_TA/static/src/img/company/Client-05.svg'" alt="Logo 5" />
+      </div>
+      <!-- end partner -->
+      <!-- collections -->
+      <div class="container-fluid col-12 text-center" style="padding-top: 50px; padding-bottom: 20px;background-color: #725229;">
+        <!-- card sect -->
+        <h1 style="text-align: center; padding-top: 100px;font-weight: bold;">OUR BEST SELLER/COLLECTIONS</h1>
+        <div class="container-fluid container-card d-flex justify-content-center align-items-center flex-wrap gap-4">
+          <t t-foreach="[1, 2, 3, 4]" t-as="product">
+            <div class="card-shop position-relative">
+              <img src="/custom_TA/static/src/img/home/TA.png" class="card-shop-img-top" alt="Card Image 1"/>
+              <div class="card-shop-overlay d-flex flex-column justify-content-end p-3">
+                <h3 class="text-white fw-bold">Product <t t-esc="product"/>
+                </h3>
+                <p class="text-white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aliquet pharetra nunc, vitae vehicula libero vestibulum ac. Donec turpis ante, commodo id augue ut, faucibus dapibus nisi.<t t-esc="product"/>
+                </p>
+                <button class="btn btn-light">SHOP NOW</button>
+              </div>
+            </div>
+          </t>
+        </div>
+
+      </div>
+      <!-- end collections -->
+      <!-- portofolio service sections -->
+      <div class="container-fluid con-psc all-height col-12">
+        <div class="spchead">
+          <h1>WHAT WE DO?</h1>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu turpis quam. Sed vehicula eu leo nec lacinia. Curabitur feugiat, lorem in interdum efficitur, leo enim pharetra massa, ornare laoreet velit ex vel dui. Sed vestibulum leo eget mauris dignissim gravida. Nunc in tellus tortor. Suspendisse in ligula leo. Aliquam erat volutpat.</p>
+        </div>
+        <a href="#" class="btn btn-spc">SEE NOW</a>
+        <div class="card-spc sm-height">
+          <t t-foreach="[1, 2, 3, 4, 5]" t-as="card">
+            <div class="card">
+              <img t-att-src="'/custom_TA/static/src/img/home/TA.png'" t-att-alt="'Card Image ' + str(card)" />
+              <div class="overlay">
+                Services <t t-esc="card" />
+              </div>
+            </div>
+          </t>
+        </div>
+
+      </div>
+      <!-- end psc -->
+      <!-- slider -->
+      <div class="container-fluid slider-socmed">
+        <div class="col-4 banner-slider-socmed">
+          <div class="bshead-socmed">
+            <h1>DON'T MISS THE TREND!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed augue tellus, pharetra in laoreet sed, lobortis non nibh</p>
+            <button class="btn btn-spc-socmed">SHOP NOW</button>
+          </div>
+        </div>
+        <div class="col-8">
+          <div class="slider-container-socmed">
+            <div class="swiper-socmed" id="cardSliderSocmed">
+              <div class="swiper-wrapper-socmed">
+                <!-- Slide Template -->
+                <div class="swiper-slide-socmed">
+                  <div class="card-socmed">
+                    <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b" alt="Fashion Item" />
+                    <div class="card-socmed-body">
+                      <h5 class="card-title-socmed">Summer Collection</h5>
+                      <p class="card-text-socmed">Discover our latest summer fashion collection with trendy designs.</p>
+                      <a href="#" class="btn-socmed">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide-socmed">
+                  <div class="card-socmed">
+                    <img src="https://images.unsplash.com/photo-1445205170230-053b83016050" alt="Fashion Item" />
+                    <div class="card-socmed-body">
+                      <h5 class="card-title-socmed">Accessories</h5>
+                      <p class="card-text-socmed">Complete your look with our premium selection of accessories.</p>
+                      <a href="#" class="btn-socmed">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+                <div class="swiper-slide-socmed">
+                  <div class="card-socmed">
+                    <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d" alt="Fashion Item" />
+                    <div class="card-socmed-body">
+                      <h5 class="card-title-socmed">Street Style</h5>
+                      <p class="card-text-socmed">Urban fashion that makes you stand out from the crowd.</p>
+                      <a href="#" class="btn-socmed">Learn More</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- Add navigation -->
+              <div class="swiper-button-next-socmed"></div>
+              <div class="swiper-button-prev-socmed"></div>
+              <!-- Add pagination -->
+              <div class="swiper-pagination-socmed"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!--  -->
+      <!-- ulin -->
+      <div class="container-fluid col-12 all-height con-reason p-0">
+        <div class="spchead">
+          <h1>WHY ULIN?</h1>
+        </div>
+        <!-- Carousel wrapper -->
+        <div id="customCarouselEnd" class="carousel slide carousel-zoom col-12 container-fluid" data-bs-ride="carousel">
+
+          <!-- Inner -->
+          <div class="carousel-inner" style="background-color: #d3d3d3; height: 500px;">
+            <!-- Slide 1 -->
+            <div class="carousel-item active d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/TA.png'); background-position: center top; background-size: cover; background-repeat: no-repeat;">
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/TA.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/TA.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+            </div>
+          </div>
+        </div>
+
+        <div class="row container-fluid sm-height d-flex align-items-center justify-content-center g-4 h-100 text-center" style="width: 1500px;margin-top: 100px;">
+          <!-- Column 1 -->
+          <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="avatar mb-3">
+              <img src="https://via.placeholder.com/100" alt="Avatar 1" />
+            </div>
+            <h5>Column 1</h5>
+          </div>
+          <!-- Column 2 -->
+          <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="avatar mb-3">
+              <img src="https://via.placeholder.com/100" alt="Avatar 2" />
+            </div>
+            <h5>Column 2</h5>
+          </div>
+          <!-- Column 3 -->
+          <div class="col-4 d-flex flex-column align-items-center justify-content-center">
+            <div class="avatar mb-3">
+              <img src="https://via.placeholder.com/100" alt="Avatar 3" />
+            </div>
+            <h5>Column 3</h5>
+          </div>
+
+        </div>
+
+
+      </div>
+      <!-- category -->
+      <div class="container-fluid con-psc all-height col-12">
+        <div class="spchead">
+          <h1>BROWSE BY CATEGORY</h1>
+          <p class="">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc eu turpis quam. Sed vehicula eu leo nec lacinia. Curabitur feugiat, lorem in interdum efficitur, leo enim pharetra massa, ornare laoreet velit ex vel dui. Sed vestibulum leo eget mauris dignissim gravida. Nunc in tellus tortor. Suspendisse in ligula leo. Aliquam erat volutpat.</p>
+        </div>
+        <a href="#" class="btn btn-spc">SEE ALL CATEGORY</a>
+        <div class="card-category sm-height">
+          <t t-foreach="[1, 2, 3, 4]" t-as="card">
+            <div class="card" style="width: 300px;height: 400px;">
+              <img t-att-src="'/custom_TA/static/src/img/home/TA.png'" t-att-alt="'Card Image ' + str(card)" />
+              <div class="overlay">
+                Category <t t-esc="card" />
+              </div>
+            </div>
+          </t>
+        </div>
+
+      </div>
+
+      <!-- testi -->
+      <div class="container py-5">
+        <h1 class="text-center mb-5 fw-bold">WHAT THEY SAY ABOUT US</h1>
+
+        <div class="owl-carousel owl-theme" id="testimonialCarousel">
+          <!-- Testimonial Item 1 -->
+          <div class="item">
+            <div class="card text-center testimonial-card" style="width: 100% !important;">
+              <img src="https://source.unsplash.com/random/150x150?person" alt="Testimonial Image" class="testimonial-image"/>
+              <div class="card-body p-4 testimonial-content">
+                <div class="rating testimonial-rating">
+                  <span class="text-warning">★★★★</span>
+                  <span class="text-muted">★</span>
+                  <small class="ms-2">4.5/5</small>
+                </div>
+                <h5 class="card-title testimonial-title">MALIK RAHMAT</h5>
+                <p class="card-text testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="card-text testimonial-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial Item 2 -->
+          <div class="item">
+            <div class="card text-center testimonial-card" style="width: 100% !important;">
+              <img src="https://source.unsplash.com/random/150x150?person" alt="Testimonial Image" class="testimonial-image"/>
+              <div class="card-body p-4 testimonial-content">
+                <div class="rating testimonial-rating">
+                  <span class="text-warning">★★★★</span>
+                  <span class="text-muted">★</span>
+                  <small class="ms-2">4.5/5</small>
+                </div>
+                <h5 class="card-title testimonial-title">MALIK RAHMAT</h5>
+                <p class="card-text testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="card-text testimonial-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </div>
+            </div>
+          </div>
+          <!-- Testimonial Item 3 -->
+          <div class="item">
+            <div class="card text-center testimonial-card" style="width: 100% !important;">
+              <img src="https://source.unsplash.com/random/150x150?person" alt="Testimonial Image" class="testimonial-image"/>
+              <div class="card-body p-4 testimonial-content">
+                <div class="rating testimonial-rating">
+                  <span class="text-warning">★★★★</span>
+                  <span class="text-muted">★</span>
+                  <small class="ms-2">4.5/5</small>
+                </div>
+                <h5 class="card-title testimonial-title">JOHN DOE</h5>
+                <p class="card-text testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <p class="card-text testimonial-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- FAQ -->
+      <div class="container-fluid padding-height" style="background-color: #725229;">
+        <div class="spchead pb-5">
+          <h1 style="color: #FFF">FREQUENTLY ASKED QUESTIONS</h1>
+        </div>
+        <div class="-faq-accordion">
+          <div class="-faq-accordion-item">
+            <div class="-faq-accordion-header" onclick="toggleAccordion('faq-content1')" style="color: #FFF">
+              <span class="accordion-icon">+</span> FAQ #1
+            </div>
+            <div class="-faq-accordion-content" id="faq-content1" style="color: #FFF">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+          </div>
+          <div class="-faq-accordion-item">
+            <div class="-faq-accordion-header" onclick="toggleAccordion('faq-content2')" style="color: #FFF">
+              <span class="accordion-icon">+</span> FAQ #2
+            </div>
+            <div class="-faq-accordion-content" id="faq-content2" style="color: #FFF">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+          </div>
+          <div class="-faq-accordion-item">
+            <div class="-faq-accordion-header" onclick="toggleAccordion('faq-content3')" style="color: #FFF">
+              <span class="accordion-icon">+</span> FAQ #3
+            </div>
+            <div class="-faq-accordion-content" id="faq-content3" style="color: #FFF">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit...</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end carousel -->
+      <div id="customCarouselEnd" class="carousel slide carousel-zoom" data-bs-ride="carousel">
+        <!-- Indicators -->
+        <div class="carousel-indicators custom-indicators">
+          <button type="button" data-bs-target="#customCarouselEnd" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#customCarouselEnd" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#customCarouselEnd" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        </div>
+
+
+        <!-- Inner -->
+        <div class="carousel-inner" style="background-color: #d3d3d3; height: 500px;">
+          <!-- Slide 1 -->
+          <div class="carousel-item active d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/car-card.png'); background-position: center top; background-size: cover; background-repeat: no-repeat;">
+            <span style="font-weight: bold; font-size: 90px; color: #fff">CAR</span>
+            <p style="width: 60%; margin-top: 20px; color: #fff">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada, turpis nisl tempor arcu.
+            </p>
+            <a href="#" style="display: inline-block; padding: 15px 40px; background-color: #FF0000; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px;">
+              LEARN MORE
+            </a>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="carousel-item d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/he-card.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+            <span style="font-weight: bold; font-size: 90px; color: #fff">HE</span>
+            <p style="width: 60%; margin-top: 20px; color: #fff">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada, turpis nisl tempor arcu.
+            </p>
+            <a href="#" style="display: inline-block; padding: 15px 40px; background-color: #FF0000; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px;">
+              LEARN MORE
+            </a>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="carousel-item d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/ulin-card.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+            <span style="font-weight: bold; font-size: 90px; color: #fff">ULIN</span>
+            <p style="width: 60%; margin-top: 20px; color: #fff">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada, turpis nisl tempor arcu.
+            </p>
+            <a href="#" style="display: inline-block; padding: 15px 40px; background-color: #FF0000; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px;">
+              LEARN MORE
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- <t t-call="custom_TA.assets_js"/> -->
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+      <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+      <!-- Owl Carousel JS -->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+      <!-- Bootstrap JS Bundle with Popper -->
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    </t>
+    <script>
+        function toggleAccordion(contentId) {
+          const content = document.getElementById(contentId);
+          content.classList.toggle("active");
+        }
+        $(document).ready(function(){
+                    $("#testimonialCarousel").owlCarousel({
+                        center: true,
+                        items: 3,
+                        loop: true,
+                        nav: true,
+                        dots: true,
+                        autoplay: true,
+                        autoplayTimeout: 5000,
+                        smartSpeed: 800,
+                        margin: 30,
+                        responsive: {
+                            0: {
+                                items: 1,
+                                margin: 30
+                            },
+                            768: {
+                                items: 2,
+                                margin: 30
+                            },
+                            992: {
+                                items: 2,
+                                margin: 30
+                            }
+                        },
+                        navText: ['<i class="fas fa-chevron-left"></i>', '      <i class="fas fa-chevron-right"></i>']
+                    });
+                });
+                            <!-- faq -->
+                function toggleAccordion(id) {
+                  const content = document.getElementById(id);
+                  const icon = content.previousElementSibling.querySelector('.accordion-icon');
+
+                  if (content.classList.contains('active')) {
+                    content.classList.remove('active');
+                    icon.textContent = '+';
+                  } else {
+                    content.classList.add('active');
+                    icon.textContent = '-';
+                  }
+                }
+    </script>
+
+  </template>
+
+  <record id="action_ulin_page" model="ir.actions.act_url">
+    <field name="name">Ulin Page</field>
+    <field name="url">/ulin_page</field>
+    <field name="target">self</field>
+  </record>
+</odoo>

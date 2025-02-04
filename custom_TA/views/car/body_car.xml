@@ -1,0 +1,397 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+  <template id="body_car" name="">
+
+    <style>
+        .testimonial-card {
+            max-width: 700px !important;
+            margin: 0 auto;
+            border: 1px solid #eee;
+            border-radius: 15px;
+            background-color: #fff;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .testimonial-content {
+            width: 66.67%;
+            padding: 1rem;
+        }
+        .testimonial-rating {
+            margin-bottom: 0.5rem;
+        }
+        .testimonial-title {
+            margin-top: 1rem;
+            font-weight: 600;
+            color: #333;
+        }
+        .testimonial-text {
+            margin-bottom: 1rem;
+            color: #666;
+            line-height: 1.6;
+        }
+        .testimonial-subtext {
+            font-size: 0.875rem;
+            color: #888;
+        }
+        .owl-nav button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            border-radius: 50% !important;
+            background: #fff !important;
+            border: 2px solid #000 !important;
+            color: #000 !important;
+            font-size: 20px !important;
+            transition: all 0.3s ease;
+        }
+        .owl-nav button:hover {
+            background: #000 !important;
+            color: #fff !important;
+        }
+        .owl-prev {
+            left: -60px;
+        }
+        .owl-next {
+            right: -60px;
+        }
+        .owl-dots {
+            margin-top: 30px !important;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .owl-dots button.owl-dot {
+            background-color: transparent;
+            width: 80px; /* Lebar garis */
+            height: 3px; /* Tinggi garis */
+            margin: 0 5px; /* Jarak antar garis */
+            border: none;
+            padding: 0;
+            transition: all 0.3s ease;
+        }
+
+        .owl-dots button.owl-dot.active {
+            background: #000 !important;
+            transform: scaleX(1.5); /* Memperpanjang garis saat aktif */
+        }
+        .owl-theme .owl-dots .owl-dot span {
+            width: 10px;
+            height: 10px;
+            margin: 5px 7px;
+            background: #fff;
+            display: block;
+            -webkit-backface-visibility: visible;
+            transition: opacity .2s ease;
+            border-radius: 30px;
+        }
+        .owl-theme .owl-dots .owl-dot.active span, .owl-theme .owl-dots .owl-dot:hover span {
+            background: #fff
+        }
+        .owl-stage {
+            padding: 40px 0;
+            display: flex;
+            align-items: center;
+        }
+        .owl-item {
+            
+            opacity: 0.5;
+            transform: scale(0.85);
+            transition: all 0.3s ease;
+        }
+        .owl-item.active {
+            
+            opacity: 0.7;
+            transform: scale(0.9);
+        }
+        .owl-item.center {
+            
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+
+
+    <div class="container-fluid all-height col-12 p-0">
+      <div style="display: flex; height: auto; margin: 0 auto;">
+        <!-- Left Column -->
+        <div style="width: 50%; ">
+          <img src="/custom_TA/static/src/img/car/triangle.png" alt="Triangle" class="img-fluid m-0" style="width: 100%;" />
+        </div>
+        <!-- Right Column with Image Covering Full Grid Area -->
+        <div style="width: 50%; padding: 20px; box-sizing: border-box; text-align: center; align-content: center;">
+          <h2 style="font-size: 3rem; font-weight: bold; margin-bottom: 25px;">WHAT IS CAR SERVICE?</h2>
+          <p style="font-size: 1rem; margin-bottom: 50px;">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada,turpis nisl tempor arcu, vitae cursus arcu orci a purus.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada,turpis nisl tempor arcu, vitae cursus arcu orci a purus.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="contain-swiper-car col-14 text-center all-height" style="padding-top: 50px; padding-bottom: 20px;">
+      <h2 class="service-title">OUR SERVICE</h2>
+      <div class="d-flex flex-nowrap slider-container" style="padding: 50px;">
+        <div class="slide flex-shrink-1">
+          <img src="/custom_TA/static/src/img/car/services-card.png" alt="Slide Image" class="img-fluid" />
+          <div class="text-block-car">
+            <span style="width: 1200px;">&#160;</span>
+            <div class="text-content">
+              <h3>
+                <img src="/custom_TA/static/src/img/car/services-card.png" alt="Logo" style="width: 60px; height: 60px; vertical-align: middle; margin-right: 8px;" />
+                  BODY REPAIR (ASURANSI)
+              </h3>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod quam neque. Proin porttitor eu orci et accumsan. Quisque ultricies quis leo scelerisque blandit. Sed accumsan tincidunt ullamcorper.
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="slide flex-shrink-1">
+          <img src="/custom_TA/static/src/img/car/services-card.png" alt="Slide Image" class="img-fluid" />
+          <div class="text-block-car">
+            <span style="width: 1200px;">&#160;</span>
+            <div class="text-content">
+              <h3>
+                <img src="/custom_TA/static/src/img/car/services-card.png" alt="Logo" style="width: 60px; height: 60px; vertical-align: middle; margin-right: 8px;" />
+                  BODY REPAIR (NON-ASURANSI)
+              </h3>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod quam neque. Proin porttitor eu orci et accumsan. Quisque ultricies quis leo scelerisque blandit. Sed accumsan tincidunt ullamcorper.
+              </p>
+            </div>
+          </div>
+
+        </div>
+        <div class="slide flex-shrink-1">
+          <img src="/custom_TA/static/src/img/car/services-card.png" alt="Slide Image" class="img-fluid" />
+          <div class="text-block-car">
+            <span style="width: 1200px;">&#160;</span>
+            <div class="text-content">
+              <h3>
+                <img src="/custom_TA/static/src/img/car/services-card.png" alt="Logo" style="width: 60px; height: 60px; vertical-align: middle; margin-right: 8px;" />
+                  MOBILIZATION
+              </h3>
+              <p>
+                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus euismod quam neque. Proin porttitor eu orci et accumsan. Quisque ultricies quis leo scelerisque blandit. Sed accumsan tincidunt ullamcorper.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container-fluid mt-4 col-12 text-center all-height client">
+      <h1 style="font-weight: bold;">OUR CLIENT</h1>
+      <div id="jeff">
+
+        <div class="row">
+          <div class="stack">
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-01.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-02.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-03.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-04.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-05.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-06.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-07.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-08.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+          </div>
+        </div>
+        <div class="row">
+          <div class="stack reverse">
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-01.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-02.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-03.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-04.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-05.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-06.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-07.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+            <img t-att-src="'/custom_TA/static/src/img/company/Client-08.svg'" alt="Logo 1" style="width: 100%; height: auto; max-height: 120px; object-fit: contain;" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="container-fluid col-12 text-center all-height">
+      <h1 style="font-weight: bold;">OUR LOCATIONS</h1>
+      <div class="col-12 mt-4 position-relative">
+        <img class="m-0" style="width: 100%; height: auto;" src="/custom_TA/static/src/img/car/car-map.png" alt="Trinity Maps Coverage"/>
+
+        <!-- Pin 1 -->
+        <div class="pin" style="top: 29%;left: 48.4%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 1" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 1</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+
+        <!-- Pin 2 -->
+        <div class="pin" style="top: 43.5%;left: 57.6%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 2" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 2</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+
+        <!-- Pin 3 -->
+        <div class="pin" style="top: 43.56%;left: 20.5%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 3" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 3</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+
+        <!-- pin 4 -->
+        <div class="pin" style="top: 48%;left: 43%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 4" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 4</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+
+        <!-- pin 5 -->
+        <div class="pin" style="top: 26%;left: 45.2%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 5" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 5</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+
+        <!-- pin 6 -->
+        <div class="pin" style="top: 13%;left: 48.8%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 6" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 6</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+
+        <!-- pin 7 -->
+        <div class="pin" style="top: 24%;left: 70.6%;">
+          <div class="popup">
+            <img src="/custom_TA/static/src/img/home/TA.png" alt="Location 7" style="width: 100px; height: auto; border-radius: 5px;"/>
+            <h3 style="margin: 5px 0;">Location 7</h3>
+            <p style="margin: 0; font-size: 12px;">Deskripsi singkat tentang lokasi 1.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <div class="container py-5">
+      <h1 class="text-center mb-5 fw-bold">WHAT THEY SAY ABOUT US</h1>
+
+      <div class="owl-carousel owl-theme" id="testimonialCarousel">
+        <!-- Testimonial Item 1 -->
+        <div class="item">
+          <div class="card text-center testimonial-card" style="width: 100% !important;">
+
+            <div class="card-body p-4 testimonial-content">
+              <div class="rating testimonial-rating">
+                <span class="text-warning">★★★★</span>
+                <span class="text-muted">★</span>
+                <small class="ms-2">4.5/5</small>
+              </div>
+              <h5 class="card-title testimonial-title">MALIK RAHMAT</h5>
+              <p class="card-text testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="card-text testimonial-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial Item 2 -->
+        <div class="item">
+          <div class="card text-center testimonial-card" style="width: 100% !important;">
+
+            <div class="card-body p-4 testimonial-content">
+              <div class="rating testimonial-rating">
+                <span class="text-warning">★★★★</span>
+                <span class="text-muted">★</span>
+                <small class="ms-2">4.5/5</small>
+              </div>
+              <h5 class="card-title testimonial-title">MALIK RAHMAT</h5>
+              <p class="card-text testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="card-text testimonial-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+          </div>
+        </div>
+        <!-- Testimonial Item 3 -->
+        <div class="item">
+          <div class="card text-center testimonial-card" style="width: 100% !important;">
+
+            <div class="card-body p-4 testimonial-content">
+              <div class="rating testimonial-rating">
+                <span class="text-warning">★★★★</span>
+                <span class="text-muted">★</span>
+                <small class="ms-2">4.5/5</small>
+              </div>
+              <h5 class="card-title testimonial-title">JOHN DOE</h5>
+              <p class="card-text testimonial-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+              <p class="card-text testimonial-subtext">Lorem ipsum dolor sit amet, consectetur adipiscing elit</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Carousel wrapper -->
+    <div id="customCarouselEnd" class="carousel slide carousel-zoom" data-bs-ride="carousel">
+      <!-- Indicators -->
+      <div class="carousel-indicators custom-indicators">
+        <button type="button" data-bs-target="#customCarouselEnd" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#customCarouselEnd" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#customCarouselEnd" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+
+      <!-- Inner -->
+      <div class="carousel-inner" style="background-color: #d3d3d3; height: 500px;">
+        <!-- Slide 1 -->
+        <div class="carousel-item active d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/car-card.png'); background-position: center top; background-size: cover; background-repeat: no-repeat;">
+          <span style="font-weight: bold; font-size: 90px; color: #fff">CAR</span>
+          <p style="width: 60%; margin-top: 20px; color: #fff">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada, turpis nisl tempor arcu.
+          </p>
+          <a href="#" style="display: inline-block; padding: 15px 40px; background-color: #FF0000; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px;">
+                            LEARN MORE
+          </a>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="carousel-item d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/he-card.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+          <span style="font-weight: bold; font-size: 90px; color: #fff">HE</span>
+          <p style="width: 60%; margin-top: 20px; color: #fff">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada, turpis nisl tempor arcu.
+          </p>
+          <a href="#" style="display: inline-block; padding: 15px 40px; background-color: #FF0000; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px;">
+                            LEARN MORE
+          </a>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="carousel-item d-flex flex-column justify-content-center align-items-start text-start ps-5" style="height: 100%; background-image: url('/custom_TA/static/src/img/home/ulin-card.png'); background-position: center; background-size: cover; background-repeat: no-repeat;">
+          <span style="font-weight: bold; font-size: 90px; color: #fff">ULIN</span>
+          <p style="width: 60%; margin-top: 20px; color: #fff">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam auctor, urna eget varius malesuada, turpis nisl tempor arcu.
+          </p>
+          <a href="#" style="display: inline-block; padding: 15px 40px; background-color: #FF0000; color: white; text-decoration: none; font-weight: bold; border-radius: 5px; margin-top: 20px;">
+                            LEARN MORE
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </template>
+</odoo>
